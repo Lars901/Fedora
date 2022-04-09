@@ -28,7 +28,7 @@ sudo sh -c 'echo -e "[shiftkey]\nname=GitHub Desktop\nbaseurl=https://packageclo
 sudo dnf upgrade -y
 echo "installing Github Desktop Client"
 sudo dnf install github-desktop -y
-sudo “lpf-spotify-client
+sudo lpf-spotify-client
 sudo dnf install google-noto-emoji-color-fonts -y
 sudo mkdir ~/.config/fontconfig/conf.d/
 sudo dnf install ibus-uniemoji -y
