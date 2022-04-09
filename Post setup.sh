@@ -29,7 +29,6 @@ sudo sh -c 'echo -e "[shiftkey]\nname=GitHub Desktop\nbaseurl=https://packageclo
 sudo dnf upgrade -y
 echo "installing Github Desktop Client"
 sudo dnf install github-desktop -y
-sudo lpf-spotify-client
 sudo dnf install google-noto-emoji-color-fonts -y
 sudo mkdir ~/.config/fontconfig/conf.d/
 sudo dnf install ibus-uniemoji -y
@@ -39,4 +38,4 @@ sudo cp /home/larsove/Fedora/01-emoji.conf ~/.config/fontconfig/conf.d/01-emoji.
  git clone https://github.com/ChrisTitusTech/wallpaper-reddit.git
  cd wallpaper-reddit
  sudo python3 setup.py install
- 
+ wallpaper-reddit [subreddits]
