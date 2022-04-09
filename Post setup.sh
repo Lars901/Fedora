@@ -34,8 +34,5 @@ sudo mkdir ~/.config/fontconfig/conf.d/
 sudo dnf install ibus-uniemoji -y
 sudo cp /home/larsove/Fedora/01-emoji.conf ~/.config/fontconfig/conf.d/01-emoji.conf
  sudo dnf install python3-imaging -y
- cd ~
- git clone https://github.com/ChrisTitusTech/wallpaper-reddit.git
- cd wallpaper-reddit
- sudo python3 setup.py install
- wallpaper-reddit [subreddits]
+ sudo dnf install feh -y
+cp /home/larsove/Fedora/Wallpapers/*.jpg /home/larsove/pictures/wallpapers
