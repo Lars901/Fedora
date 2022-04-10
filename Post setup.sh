@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+sudo dnf install terminus-fonts -y
 sudo dnf install github -y
 echo "adding Brave Repo"
 sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/
@@ -36,3 +37,17 @@ sudo cp /home/larsove/Fedora/01-emoji.conf ~/.config/fontconfig/conf.d/01-emoji.
  sudo dnf install python3-imaging -y
  sudo dnf install feh -y
 cp *.jpg /home/larsove/pictures/wallpapers
+sudo dnf install neofetch -y
+sudo dnf install @virtualization -y
+sudo dnf install qemu-kvm -y
+ sudo dnf install virt-manager -y
+ sudo dnf install virt-viewer -y
+sudo systemctl start libvirtd
+sudo systemctl enable libvirtd
+lsmod | grep kvm
+ sudo dnf install kde-print-manager.x86_64 -y
+ sudo dnf install samba samba-common samba-client -y
+ sudo systemctl start smbd nmbd
+ sudo systemctl enable smbd nmbd
+systemctl status smbd
+sudo dnf install htop -y
