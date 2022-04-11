@@ -8,7 +8,6 @@ sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 sudo dnf upgrade -y
 echo "installing Brave Browser"
 sudo dnf install brave-browser -y
-
 echo "adding VSCodium GPG Key"
 sudo rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg
 echo "adding VSCodium Repo"
@@ -31,6 +30,7 @@ sudo dnf upgrade -y
 echo "installing Github Desktop Client"
 sudo dnf install github-desktop -y
 sudo dnf install google-noto-emoji-color-fonts -y
+sudo mkdir ~/.config/fontconfig/
 sudo mkdir ~/.config/fontconfig/conf.d/
 sudo dnf install ibus-uniemoji -y
 sudo cp /home/larsove/Fedora/01-emoji.conf ~/.config/fontconfig/conf.d/01-emoji.conf
