@@ -51,5 +51,7 @@ lsmod | grep kvm
  sudo systemctl enable smbd nmbd
 systemctl status smbd
 sudo dnf install htop -y
-sudo dnf copr enable kwizart/fedy # Install fedy copr repository
-sudo dnf install fedy -y # Install fedy
+echo "# Install fedy copr repository"
+sudo dnf copr enable kwizart/fedy 
+echo "Insalling Fedy" 
+sudo dnf install fedy -y 
