@@ -36,8 +36,9 @@ sudo dnf install ibus-uniemoji -y
 sudo cp /home/larsove/Fedora/01-emoji.conf ~/.config/fontconfig/conf.d/01-emoji.conf
  sudo dnf install python3-imaging -y
  sudo dnf install feh -y
- mkdir /home/larsove/pictures/wallpapers
-cp *.jpg /home/larsove/pictures/wallpapers
+ mkdir /home/larsove/Pictures/wallpapers
+cd /Wallpapers
+cp *.jpg /home/larsove/Pictures/Wallpapers
 sudo dnf install neofetch -y
 sudo dnf install @virtualization -y
 sudo dnf install qemu-kvm -y
