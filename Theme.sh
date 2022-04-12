@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Download Nordic Theme
-cd /usr/share/themes/
+cd /usr/share/plasma/desktoptheme/
 git clone https://github.com/EliverLara/Nordic.git
 
 # Fira Code Nerd Font variant needed
@@ -13,8 +13,8 @@ unzip Meslo.zip -d ~/.fonts
 fc-cache -vf
 
 #Ms-fonts
-sudo dnf install curl cabextract xorg-x11-font-utils fontconfig
-sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
+sudo dnf install curl cabextract xorg-x11-font-utils fontconfig -y
+sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm -y
 
 # Layan Cursors
 cd /home
