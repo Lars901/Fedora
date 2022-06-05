@@ -22,12 +22,7 @@ sudo dnf install lpf-spotify-client -y
 echo "Run lpf spotify-client from program menu"
 echo "installing Steam"
 sudo dnf install steam -y
-echo "adding third party Github Desktop Repo GPG Key and Repo"
-sudo rpm --import https://packagecloud.io/shiftkey/desktop/gpgkey
-sudo sh -c 'echo -e "[shiftkey]\nname=GitHub Desktop\nbaseurl=https://packagecloud.io/shiftkey/desktop/el/7/\$basearch\nenabled=1\ngpgcheck=0\nrepo_gpgcheck=1\ngpgkey=https://packagecloud.io/shiftkey/desktop/gpgkey" > /etc/yum.repos.d/shiftkey-desktop.repo'
 sudo dnf upgrade -y
-echo "installing Github Desktop Client"
-sudo dnf install github-desktop -y
 sudo dnf install google-noto-emoji-color-fonts -y
 sudo mkdir ~/.config/fontconfig/
 sudo mkdir ~/.config/fontconfig/conf.d/
