@@ -41,9 +41,7 @@ cd /Wallpapers
 cp *.jpg /home/larsove/Pictures/Wallpapers
 sudo dnf install neofetch -y
 sudo dnf install @virtualization -y
-sudo dnf install qemu-kvm -y
- sudo dnf install virt-manager -y
- sudo dnf install virt-viewer -y
+sudo dnf install virt-manager libvirt libvirt-python python-virtinst libvirt-client -y
 sudo systemctl start libvirtd
 sudo systemctl enable libvirtd
 lsmod | grep kvm
