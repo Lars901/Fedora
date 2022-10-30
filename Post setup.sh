@@ -27,12 +27,12 @@ sudo dnf install google-noto-emoji-color-fonts -y
 sudo mkdir ~/.config/fontconfig/
 sudo mkdir ~/.config/fontconfig/conf.d/
 sudo dnf install ibus-uniemoji -y
-sudo cp /home/larsove/Fedora/01-emoji.conf ~/.config/fontconfig/conf.d/01-emoji.conf
+sudo cp /$HOME/$USER/Fedora/01-emoji.conf ~/.config/fontconfig/conf.d/01-emoji.conf
  sudo dnf install python3-imaging -y
  sudo dnf install feh -y
- mkdir /home/larsove/Pictures/wallpapers
+ mkdir /$HOME/$USER/Pictures/wallpapers
 cd /Wallpapers
-cp *.jpg /home/larsove/Pictures/Wallpapers
+cp *.jpg /$HOME/$USER/Pictures/Wallpapers
 sudo dnf install neofetch -y
 sudo dnf install @virtualization -y
 sudo dnf install virt-manager libvirt libvirt-python python-virtinst libvirt-client -y
