@@ -49,3 +49,4 @@ echo "# Install fedy copr repository"
 sudo dnf copr enable kwizart/fedy 
 echo "Insalling Fedy" 
 sudo dnf install fedy -y 
+sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
