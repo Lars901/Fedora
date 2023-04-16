@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+username=$(id -u -n 1000)
+builddir=$(pwd)
+
 sudo dnf install terminus-fonts -y
 sudo dnf install github -y
 echo "adding Brave Repo"
@@ -17,9 +20,6 @@ sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfre
 echo "Enabling FREE RPM Fusion Repo"
 sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y
 sudo dnf upgrade -y
-echo "installing Spotify"
-sudo dnf install lpf-spotify-client -y
-echo "Run lpf spotify-client from program menu"
 echo "installing Steam"
 sudo dnf install steam -y
 sudo dnf upgrade -y
@@ -50,3 +50,63 @@ sudo dnf copr enable kwizart/fedy
 echo "Insalling Fedy" 
 sudo dnf install fedy -y 
 sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
+
+# Installing fonts
+cd "$builddir" || exit
+sudo nala install fonts-font-awesome -y
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
+unzip FiraCode.zip -d "/home/$username/.fonts"
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
+unzip Meslo.zip -d "/home/$username/.fonts"
+mv dotfonts/fontawesome/otfs/*.otf "/home/$username/.fonts/"
+chown "$username:$username" "/home/$username/.fonts/*"
+
+# Install Nordzy cursor
+git clone https://github.com/alvatip/Nordzy-cursors
+cd Nordzy-cursors || exit
+chmod +x ./install.sh
+./install.sh
+cd "$builddir" || exit
+rm -rf Nordzy-cursors
+
+# Install  Layan Cursors
+git clone https://github.com/vinceliuice/Layan-cursors
+cd Layan-cursors || exit
+chmod +x ./install.sh
+./install.sh
+cd "$builddir" || exit
+rm -Layan-cursors 
+
+# Reloading Font cache
+fc-cache -vf
+# Removing zip Files
+rm ./FiraCode.zip ./Meslo.zip
+
+#___________________________________#
+#Flatpaks
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+#Spotify
+flatpak install -y flathub com.spotify.Client
+#Dolphin Emu
+flatpak install -y flathub org.DolphinEmu.dolphin-emu
+cd "/home/$username"
+#wget https://downloads.romspedia.com/roms/Legend%20of%20Zelda%2C%20The%20-%20The%20Wind%20Waker%20%28USA%29.7z
+
+#RPCS3 Emu
+flatpak install -y flathub net.rpcs3.RPCS3
+cd "$builddir" || exit
+wget http://dus01.ps3.update.playstation.net/update/ps3/image/us/2023_0228_05fe32f5dc8c78acbcd84d36ee7fdc5b/PS3UPDAT.PUP
+
+#Discord
+flatpak install -y flathub com.discordapp.Discord
+
+#Wallpaper downloader
+flatpak install -y flathub es.estoes.wallpaperDownloader
+
+#Bible applications
+flatpak install -y flathub org.xiphos.Xiphos
+
+#Github Desktop 
+flatpak install -y flathub io.github.shiftey.Desktop
+#_______________________________________________________________________#
